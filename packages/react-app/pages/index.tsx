@@ -5,8 +5,8 @@ import { useState } from "react";
 import StepOne from "../components/FormComponents/formsteps/StepOne";
 import StepTwo from "../components/FormComponents/formsteps/StepTwo";
 import StepThree from "../components/FormComponents/formsteps/StepThree";
-import ReturnIcon from "../icons/ReturnIcon";
 import FormStepper from "../components/FormComponents/formsteps/FormStepper";
+import { UseContextProvider } from "../components/contexts/NavigationContext";
 
 export default function Home(): JSX.Element {
   const [data, setData] = useState<{
@@ -37,6 +37,7 @@ export default function Home(): JSX.Element {
     },
   });
   const [currentStep, setCurrentStep] = useState(1);
+  // const [user, signer, provider, setUser, login] = ""
 
   const createProposal = async (): Promise<void> => {
     let user: any;
@@ -68,6 +69,50 @@ export default function Home(): JSX.Element {
 
   const [startForm, setStartForm] = useState(false);
   const steps = [1, 2, 3];
+
+
+  const displayStep = (step: any) => {
+    switch (step) {
+      case 1:
+        return (
+          <StepOne
+            key={1}
+            handleClick={handleClick}
+            currentStep={currentStep}
+            steps={steps}
+            data={data}
+            setData={setData}
+          />
+        )
+      case 2:
+        return (
+          <StepTwo
+            key={2}
+            handleClick={handleClick}
+            currentStep={currentStep}
+            steps={steps}
+            data={data}
+            setData={setData}
+          />
+        )
+      case 3:
+        return (
+          <StepThree
+            //key={3}
+           // handleClick={handleClick}
+            currentStep={currentStep}
+            steps={steps}
+            data={data}
+            setData={setData}
+            signer={""}
+          />
+        )
+      //   case 4:
+      //     return <Final />;
+      default:
+    }
+  }
+
 
   type DisplayStepProps = {
     step: number;
@@ -183,7 +228,7 @@ export default function Home(): JSX.Element {
           <p className="text-sm font-thin text-black mb-4">
             Create your own proposal right away and begin making choices!
           </p>
-          {step === 1 && (
+          {/* {step === 1 && (
             <div className="flex flex-col items-center">
               <button
                 className="button1 h-12 w-4/5 m-auto rounded-3xl bg-black text-white"
@@ -276,15 +321,27 @@ export default function Home(): JSX.Element {
                 Submit Proposal
               </button>
             </div>
-          )}
-          {/* <div className="m-auto text-centers">
+          )} */}
+          <div className="m-auto text-centers">
             <button
               className="button1 h-12 w-4/5 m-autos rounded-3xl bg-black text-white"
-              onClick={createSpace}
+              onClick={createProposal}
             >
               Create Proposal
             </button>
-          </div> */}
+          </div>
+
+          {startForm && (
+            <div>
+              <div className=" px-3 lg:px-10 py-6">
+                <h2 className="text-2xl font-bold my-4">Create a Proposal</h2>
+
+                <UseContextProvider>
+                  {displayStep(currentStep)}
+                </UseContextProvider>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </>
