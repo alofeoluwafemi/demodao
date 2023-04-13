@@ -12,8 +12,7 @@ const Sidebar: React.FC = ({}) => {
 
   return (
     <>
-      <div className={` hidden md:block `}>
-        <div className="h-screen flex justify-between shadow-sm scrollbar-change flex-col overflow-y-auto w-60 border-r border-r-[#545252] ">
+        <div className="h-screen flex justify-between shadow-sm scrollbar-change flex-col overflow-y-auto w-60 border-r border-r-[#545252] ml-0">
           <div className="h-full flex flex-col justify-between">
             <div>
               {/* <div className='logo flex items-center justify-center py-4 mb-3'>
@@ -85,7 +84,6 @@ const Sidebar: React.FC = ({}) => {
             </div>
           </div>
         </div>
-      </div>
     </>
   );
 };
