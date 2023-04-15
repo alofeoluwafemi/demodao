@@ -1,20 +1,27 @@
-import React from 'react'
-import UserRemoveIcon from '../../../icons/UserRemoveIcon'
+import React from "react";
+import UserRemoveIcon from "../../../icons/UserRemoveIcon";
 
 const StepTwo = ({ handleClick, currentStep, steps, data, setData }) => {
   return (
     <>
       <div className="fade-in">
-        <form onSubmit={() => handleClick('next', data)}>
+        <form onSubmit={() => handleClick("next", data)}>
           <div className="flex items-center justify-between flex-wrap">
             <label className="">Set up Controller address</label>
 
             <label className="hidden lg:block">
-              <input type="checkbox" checked readOnly className="text-sm text-gray-300" /> Use address in this account
+              <input
+                type="checkbox"
+                checked
+                readOnly
+                className="text-sm text-gray-300"
+              />{" "}
+              Use address in this account
             </label>
           </div>
           <p className="text-sm text-gray-300 my-3">
-            The user account with control over the space&apos;s settings is the space controller.
+            The user account with control over the space&apos;s settings is the
+            space controller.
           </p>
           <div className="mt-1 relative rounded-full flex-1 bg-transparent items-center grow flex h-14 w-full  ">
             <div className="absolute inset-y-0 left-0 px-3 flex items-center pointer-events-none h-full">
@@ -31,13 +38,16 @@ const StepTwo = ({ handleClick, currentStep, steps, data, setData }) => {
 
           <div className="block lg:hidden my-4">
             <label className="flex items-center justify-start gap-4">
-              <input type="checkbox" className="text-sm text-gray-300" /> Use address in this account
+              <input type="checkbox" className="text-sm text-gray-300" /> Use
+              address in this account
             </label>
           </div>
 
           <div className="border my-7 px-4 py-8 border-[#545252] rounded-md">
             <p className="text-lg">Add Partners</p>
-            <p className="text-sm text-gray-300 mb-6">They would be able to manage this space and create proposals</p>
+            <p className="text-sm text-gray-300 mb-6">
+              They would be able to manage this space and create proposals
+            </p>
 
             <label className="text-sm text-gray-300">Address</label>
             <br />
@@ -45,8 +55,10 @@ const StepTwo = ({ handleClick, currentStep, steps, data, setData }) => {
               <div className="flex flex-col lg:flex-row">
                 <input
                   type="text"
-                  onChange={(e) => setData({ ...data, admins: [e.target.value] })}
-                  value={data?.admins ? data?.admins[0] : ''}
+                  onChange={(e) =>
+                    setData({ ...data, admins: [e.target.value] })
+                  }
+                  value={data?.admins ? data?.admins[0] : ""}
                   className="bg-transparent border w-full lg:w-3/4 h-12 border-[#545252]  focus:outline-none rounded-3xl px-4  py-3 text-sm"
                 />
                 <div className="flex items-end justify-end mt-2 lg:mt-0">
@@ -58,8 +70,13 @@ const StepTwo = ({ handleClick, currentStep, steps, data, setData }) => {
               <div className="flex flex-col lg:flex-row">
                 <input
                   type="text"
-                  onChange={(e) => setData({ ...data, admins: [data.admins[0], e.target.value] })}
-                  value={data?.admins ? data?.admins[1] : ''}
+                  onChange={(e) =>
+                    setData({
+                      ...data,
+                      admins: [data.admins[0], e.target.value],
+                    })
+                  }
+                  value={data?.admins ? data?.admins[1] : ""}
                   className="bg-transparent border  w-full lg:w-3/4 h-12 border-[#545252]  focus:outline-none rounded-3xl px-4  py-3 text-sm"
                 />
                 <div className="flex items-end justify-end mt-2 lg:mt-0">
@@ -75,15 +92,19 @@ const StepTwo = ({ handleClick, currentStep, steps, data, setData }) => {
           </div>
           <div className="border my-7 px-4 py-8 border-[#545252] rounded-md">
             <p className=" text-lg">Add Creators</p>
-            <p className="text-sm text-gray-300 mb-6">They would always be able to create proposals</p>
+            <p className="text-sm text-gray-300 mb-6">
+              They would always be able to create proposals
+            </p>
 
             <label className="text-sm text-gray-300">Address</label>
             <br />
             <div className="flex flex-col lg:flex-row mb-4">
               <input
                 type="text"
-                onChange={(e) => setData({ ...data, authors: [e.target.value] })}
-                value={data?.authors ? data?.authors[0] : ''}
+                onChange={(e) =>
+                  setData({ ...data, authors: [e.target.value] })
+                }
+                value={data?.authors ? data?.authors[0] : ""}
                 className="bg-transparent border w-full lg:w-3/4 h-12 border-[#545252]  focus:outline-none rounded-3xl px-4  py-3 text-sm"
               />
               <div className="flex items-end justify-end mt-2 lg:mt-0">
@@ -95,8 +116,13 @@ const StepTwo = ({ handleClick, currentStep, steps, data, setData }) => {
             <div className="flex flex-col lg:flex-row">
               <input
                 type="text"
-                onChange={(e) => setData({ ...data, authors: [data.authors[0], e.target.value] })}
-                value={data?.authors ? data?.authors[1] : ''}
+                onChange={(e) =>
+                  setData({
+                    ...data,
+                    authors: [data.authors[0], e.target.value],
+                  })
+                }
+                value={data?.authors ? data?.authors[1] : ""}
                 className="bg-transparent border w-full lg:w-3/4 h-12 border-[#545252] text-sm focus:outline-none rounded-3xl px-4  py-3 "
               />
               <div className="flex items-end justify-end mt-2 lg:mt-0">
@@ -109,13 +135,16 @@ const StepTwo = ({ handleClick, currentStep, steps, data, setData }) => {
               </div>
             </div>
           </div>
-          <button className="button1 button1 h-12 w-full m-auto rounded-3xl" type="submit">
+          <button
+            className="button1 button1 h-12 w-full m-auto rounded-3xl bg-black text-white"
+            type="submit"
+          >
             Next
           </button>
         </form>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default StepTwo
+export default StepTwo;

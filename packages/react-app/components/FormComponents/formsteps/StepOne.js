@@ -64,7 +64,7 @@ const StepOne = ({ handleClick, currentStep, steps, data, setData }) => {
         <form onSubmit={() => handleClick("next", data)}>
           <div className="space-y-7">
             <div className="w-full">
-              <label className="text-sm text-gray-300">Name of Proposal</label>
+              <label className="text-sm text-gray-300">Name of DAO</label>
               <input
                 type="text"
                 required
@@ -77,7 +77,7 @@ const StepOne = ({ handleClick, currentStep, steps, data, setData }) => {
 
             <div className="w-full">
               <label className="text-sm text-gray-300 ">
-                Description of Proposal
+                Description of DAO
               </label>
               <input
                 onChange={(e) =>
@@ -86,7 +86,7 @@ const StepOne = ({ handleClick, currentStep, steps, data, setData }) => {
                 type="text"
                 required
                 value={data?.description}
-                placeholder="Talk about your proposal. What is it about?"
+                placeholder="Talk about your DAO. What is it about?"
                 className="bg-transparent border w-full h-12 border-[#545252] text-sm rounded-3xl px-4 py-3 text-[#000000] focus:outline-none "
               />
             </div>
@@ -101,7 +101,7 @@ const StepOne = ({ handleClick, currentStep, steps, data, setData }) => {
                   }
                   value={data?.categories ? data?.categories : "General"}
                   readOnly
-                  placeholder="You can type in what category is your proposal?"
+                  placeholder="You can type in what category is your DAO?"
                   className="bg-transparent border w-full h-12 border-[#545252] text-sm rounded-3xl p-3 mb-1 focus:outline-none  "
                 />
               </div>
@@ -305,7 +305,7 @@ const StepOne = ({ handleClick, currentStep, steps, data, setData }) => {
           </div>
           <button
             type="submit"
-            className="button1 h-12 w-full m-auto rounded-3xl"
+            className="button1 h-12 w-full m-auto rounded-3xl bg-black text-white"
           >
             {currentStep === steps.length - 1 ? "Confirm" : "Next"}
           </button>

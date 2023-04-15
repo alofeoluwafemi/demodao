@@ -27,7 +27,7 @@ const Sidebar: React.FC = ({}) => {
                   href="/"
                   className="flex items-center justify-between px-6 py-3 gap-5 bg-[#3F3F3F] rounded-full text-sm text-white mx-auto"
                 >
-                  Create Proposal
+                  Create DAO
                 </Link>
               </div>
 
@@ -62,7 +62,7 @@ const Sidebar: React.FC = ({}) => {
                         <SpacesIcon />
                       </span>
 
-                      <span className="nav_item">Proposals</span>
+                      <span className="nav_item">DAOs</span>
 
                       <span className="right_border"></span>
                     </div>

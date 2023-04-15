@@ -1,0 +1,4 @@
+export enum Chains {
+  WAVES_TESTNET_CHAIN_ID = 84,
+  WAVES_MAINNET_CHAIN_ID = 87,
+}
